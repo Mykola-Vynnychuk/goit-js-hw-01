@@ -1,39 +1,49 @@
-const deliveryToCountry = prompt ('В яку країну доставити товар?');
+let deliveryToCountry = prompt("В яку країну доставити товар?");
+deliveryToCountry = deliveryToCountry.toLowerCase();
 let cost;
 
 switch (deliveryToCountry) {
-  case 'китай':
+  case "китай":
+  case "rbnfq":
     cost = 100;
-    alert (`Доставка в ${deliveryToCountry} буде коштувати ${cost} кредитів`)
-
+    deliveryToCountry = "Китай";
     break;
 
-  case 'чилі':
+  case "чилі":
+  case "xbks":
+  case "чили":
+  case "xbkb":
     cost = 250;
-    alert (`Доставка в ${deliveryToCountry} буде коштувати ${cost} кредитів`)
-
+    deliveryToCountry = "Чилі";
     break;
 
-  case 'австралія':
+  case "австралія":
+  case "fdcnhfksz":
+  case "австралия":
+  case "fdcnhfkbz":
     cost = 170;
-    alert (`Доставка в ${deliveryToCountry} буде коштувати ${cost} кредитів`)
-
+    deliveryToCountry = "Австралію";
     break;
 
-  case 'індія':
+  case "індія":
+  case "sylsz":
+  case "индия":
+  case "bylbz":
     cost = 80;
-    alert (`Доставка в ${deliveryToCountry} буде коштувати ${cost} кредитів`)
-
+    deliveryToCountry = "Індію";
     break;
-    
-  case 'ямайка':
-    cost = 120;
-    alert (`Доставка в ${deliveryToCountry} буде коштувати ${cost} кредитів`)
 
+  case "ямайка":
+  case "zvfqrf":
+    cost = 120;
+    deliveryToCountry = "Ямайку";
     break;
 
   default:
-      alert ('У вашій країні доставка недоступна');
+    cost = "not available";
     break;
 }
 
+cost === "not available"
+  ? alert("У вашій країні доставка недоступна")
+  : alert(`Доставка в ${deliveryToCountry} буде коштувати ${cost} кредитів`);
