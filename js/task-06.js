@@ -1,3 +1,5 @@
+const buttonTuskSix = document.getElementById("tusk-six");
+buttonTuskSix.addEventListener("click", () => {
 let total = 0;
 
 while (true) {
@@ -21,3 +23,5 @@ while (true) {
 }
 
 alert(`Загальна сума введених чисел ${total}`);
+});
+

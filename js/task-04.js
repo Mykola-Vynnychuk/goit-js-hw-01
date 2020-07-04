@@ -1,17 +1,27 @@
-let credits = 23580;
-const pricePerDroid = 3000;
+const buttonTuskFour = document.getElementById("tusk-four");
+buttonTuskFour.addEventListener("click", () => {
+  let credits = 23580;
+  const pricePerDroid = 3000;
 
-const numberOfDroid = prompt("Скільки дроїдів бажаєте придбати?");
-
-if (numberOfDroid === null) {
-  console.log("Скасовано користувачем!");
-} else if (numberOfDroid * pricePerDroid > credits) {
-  console.log("Недостатньо коштів на рахунку!");
-} else {
-  credits -= numberOfDroid * pricePerDroid;
-  console.log(
-    `Ви купили ${numberOfDroid} дроїдів, на рахунку залишилося ${credits} кредитів.`
-  );
-}
-
-// Вияснити чи теба перетворювати змінну numberOfDroids в число?
+  let numberOfDroid = prompt("Скільки дроїдів бажаєте придбати?");
+  let message;
+  if (numberOfDroid === null) {
+    message = "Скасовано користувачем!";
+  } else {
+    numberOfDroid = Math.trunc(+numberOfDroid);
+    if (Number.isNaN(numberOfDroid)) {
+      message = "Скасовано. Введене значення не є числом!";
+    } else if (numberOfDroid < 0) {
+      message = "Скасовано. У нас немає можливості придбати у Вас дроїди.";
+    } else {
+      const totalPrice = pricePerDroid * numberOfDroid;
+      if (totalPrice > credits) {
+        message = "Недостатньо коштів на рахунку!";
+      } else {
+        credits -= totalPrice;
+        message = `Ви купили ${numberOfDroid} дроїдів, на рахунку залишилося ${credits} кредитів.`;
+      }
+    }
+  }
+  console.log(message);
+});

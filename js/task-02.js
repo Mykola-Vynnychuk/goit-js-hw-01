@@ -1,6 +1,12 @@
-const total = 100;
-const ordered = 80;
+const buttonTuskTwo = document.getElementById("tusk-two");
+buttonTuskTwo.addEventListener("click", () => {
+  const total = 100;
+  const ordered = +document.querySelector("[name=ordered]:checked").value;
 
-total < ordered
-  ? console.log("На складі недостатньо товарів!")
-  : console.log("Замовлення оформлено, з Вами зв'яжеться менеджер");
+  let message =
+    total < ordered
+      ? "На складі недостатньо товарів!"
+      : "Замовлення оформлено, з Вами зв'яжеться менеджер";
+
+  console.log(message);
+});
