@@ -12,7 +12,7 @@ buttonTuskFour.addEventListener("click", () => {
     if (Number.isNaN(numberOfDroid)) {
       message = "Скасовано. Введене значення не є числом!";
     } else if (numberOfDroid < 0) {
-      message = "Скасовано. У нас немає можливості придбати у Вас дроїди.";
+      message = "Скасовано. Ми не купуємо дроїди, а продаємо ;)";
     } else {
       const totalPrice = pricePerDroid * numberOfDroid;
       if (totalPrice > credits) {
