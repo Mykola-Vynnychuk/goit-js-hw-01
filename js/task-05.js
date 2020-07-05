@@ -1,56 +1,60 @@
-const buttonTuskFive = document.getElementById("tusk-five");
-buttonTuskFive.addEventListener("click", () => {
-  let deliveryToCountry = prompt("В яку країну доставити товар?");
+const buttonTaskFive = document.getElementById('task-five');
+buttonTaskFive.addEventListener('click', () => {
+  let deliveryToCountry = prompt('В яку країну доставити товар?');
   let cost;
 
   if (deliveryToCountry === null) {
-    console.log("Відмінено користувачем!");
-    cost = "not available";
+    console.log('Відмінено користувачем!');
+    cost = 'disclaimer';
   } else {
     deliveryToCountry = deliveryToCountry.toLowerCase();
     switch (deliveryToCountry) {
-      case "китай":
-      case "rbnfq":
+      case 'китай':
+      case 'rbnfq':
         cost = 100;
-        deliveryToCountry = "Китай";
+        deliveryToCountry = 'Китай';
         break;
 
-      case "чилі":
-      case "xbks":
-      case "чили":
-      case "xbkb":
+      case 'чилі':
+      case 'xbks':
+      case 'чили':
+      case 'xbkb':
         cost = 250;
-        deliveryToCountry = "Чилі";
+        deliveryToCountry = 'Чилі';
         break;
 
-      case "австралія":
-      case "fdcnhfksz":
-      case "австралия":
-      case "fdcnhfkbz":
+      case 'австралія':
+      case 'fdcnhfksz':
+      case 'австралия':
+      case 'fdcnhfkbz':
         cost = 170;
-        deliveryToCountry = "Австралію";
+        deliveryToCountry = 'Австралію';
         break;
 
-      case "індія":
-      case "sylsz":
-      case "индия":
-      case "bylbz":
+      case 'індія':
+      case 'sylsz':
+      case 'индия':
+      case 'bylbz':
         cost = 80;
-        deliveryToCountry = "Індію";
+        deliveryToCountry = 'Індію';
         break;
 
-      case "ямайка":
-      case "zvfqrf":
+      case 'ямайка':
+      case 'zvfqrf':
         cost = 120;
-        deliveryToCountry = "Ямайку";
+        deliveryToCountry = 'Ямайку';
         break;
 
       default:
-        cost = "not available";
+        cost = 'not available';
         break;
     }
   }
-  cost === "not available"
-    ? alert("У вашій країні доставка недоступна")
-    : alert(`Доставка в ${deliveryToCountry} буде коштувати ${cost} кредитів`);
+  if (cost === 'disclaimer') {
+    alert('Ви зможете скористатись нашою службою доставки згодом');
+  } else if (cost === 'not available') {
+    alert('У Вашій країні доставка недоступна');
+  } else {
+    alert(`Доставка в ${deliveryToCountry} буде коштувати ${cost} кредитів`);
+  }
 });

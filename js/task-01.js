@@ -1,6 +1,6 @@
-const buttonTuskOne = document.getElementById("tusk-one");
-buttonTuskOne.addEventListener("click", () => {
-  const name = "Генератор захисного поля";
+const buttonTaskOne = document.getElementById('task-one');
+buttonTaskOne.addEventListener('click', () => {
+  const name = 'Генератор захисного поля';
   let price = 1000;
 
   console.log(`Обрано ${name}, ціна за штуку ${price} кредитів`);

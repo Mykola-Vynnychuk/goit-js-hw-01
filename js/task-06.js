@@ -1,12 +1,11 @@
-const buttonTuskSix = document.getElementById("tusk-six");
-buttonTuskSix.addEventListener("click", () => {
+const buttonTaskSix = document.getElementById('task-six');
+buttonTaskSix.addEventListener('click', () => {
   let total = 0;
 
   while (true) {
-    let userNumber = prompt("Введіть число");
+    let userNumber = prompt('Введіть число');
 
     if (userNumber === null) {
-      console.log("Відмінено користувачем!");
       break;
     }
 
@@ -15,7 +14,7 @@ buttonTuskSix.addEventListener("click", () => {
     const notANumber = Number.isNaN(userNumber);
 
     if (notANumber) {
-      console.log("Введено не число. Ітерацію пропущено!");
+      console.log('Введено не число. Ітерацію пропущено!');
       continue;
     }
 
